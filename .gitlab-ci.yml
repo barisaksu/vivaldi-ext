@@ -1,0 +1,16 @@
+# https://cli.vuejs.org/guide/deployment.html#gitlab-pages
+
+pages:
+  image: node:latest
+  stage: deploy
+  script:
+    - npm ci
+    - npm run build
+    - mv public public-vue
+    - mv dist public
+    - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -exec gzip -f -k {} \;
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
