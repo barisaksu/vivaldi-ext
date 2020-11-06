@@ -1,12 +1,15 @@
 <template>
-  <div class="container mx-auto flex justify-center items-center h-screen">
-    <h1 class="text-2xl text-blue-400">Hello, Vivaldi!</h1>
+  <div class="">
+    <Exercises></Exercises>
   </div>
 </template>
 
 <script>
+import Exercises from "@/components/Exercises.vue";
 export default {
   name: "Home",
-  components: {},
+  components: {
+    Exercises,
+  },
 };
 </script>
