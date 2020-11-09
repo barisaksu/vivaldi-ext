@@ -22,6 +22,10 @@ body {
   font-family: "Playfair Display", serif;
 }
 
+.blur {
+  filter: blur(7px);
+}
+
 .btn {
   @apply rounded-t p-2 text-white;
   &.btn-blue {
