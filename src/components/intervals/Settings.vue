@@ -1,21 +1,21 @@
 <template>
-  <div class="flex flex-col bg-white shadow border p-2 mb-4 justify-between divide-x absolute w-2/3 z-50">
+  <div class="absolute z-50 flex flex-col justify-between lg:w-2/3 p-2 mb-4 bg-white border divide-x shadow">
     <div class="flex">
-      <div class="flex flex-col w-1/2 pr-2"><h2 class="border-b text-xl font-bold">Intervals</h2>
+      <div class="flex flex-col w-1/2 pr-2"><h2 class="text-xl font-bold border-b">Intervals</h2>
         <div v-for="(interval, key) in $store.state.Interval.intervals" :key="key">
-          <label class="flex justify-start items-start my-2">
+          <label class="flex items-start justify-start my-2">
             <div
-                class="bg-white border-2 rounded border-gray-400 w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500"
+                class="flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500"
             >
               <input
                   type="checkbox"
-                  class="opacity-0 absolute"
+                  class="absolute opacity-0"
                   v-model="$store.state.Interval.selectedIntervals"
                   :value="key"
                   :id="key"
               />
               <svg
-                  class="fill-current hidden w-4 h-4 text-green-500 pointer-events-none"
+                  class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
                   viewBox="0 0 20 20"
               >
                 <path d="M0 11l2-2 5 5L18 3l2 2L7 18z"/>
@@ -26,28 +26,26 @@
         </div>
       </div>
       <div class="w-1/2 pl-2">
-        <h2 class="border-b text-xl font-bold">Interval Type</h2>
-      </div>
-      <div class="w-1/2 pl-2">
-        <h2 class="border-b text-xl font-bold">Options </h2>
-        <div class="border p-2 my-2 space-y-2">
+        <h2 class="text-xl font-bold border-b">Interval Type</h2>
+        <div class="my-2 space-y-2">
           <RadioButton name="intervalType" checked="checked" value="melodic" text="Melodic" @selected="yazdir"/>
           <RadioButton name="intervalType" value="harmonic" text="Harmonic" @selected="yazdir"/>
+        </div>
+      </div>
+      <div class="w-1/2 pl-2">
+        <h2 class="text-xl font-bold border-b">Options </h2>
+        <div class="my-2 space-y-2">
+          <span>...</span>
         </div>
 
       </div>
     </div>
 
     <div class="flex justify-end space-x-2">
-      <button class="relative right-0 bg-red-300 text-red-900 px-4 rounded" @click="
+      <button class="relative right-0 px-4 text-blue-900 bg-blue-300 rounded hover:bg-blue-500" @click="
             $store.state.Interval.showSettings = !$store.state.Interval
               .showSettings
-          ">Cancel
-      </button>
-      <button class="relative right-0 bg-blue-300 text-blue-900 px-4 rounded" @click="
-            $store.state.Interval.showSettings = !$store.state.Interval
-              .showSettings
-          ">Save
+          ">OK
       </button>
     </div>
 

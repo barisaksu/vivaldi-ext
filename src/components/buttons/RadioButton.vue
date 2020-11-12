@@ -1,10 +1,11 @@
 <template>
   <div class="flex items-center mr-4">
-    <input :id="id" type="radio" :checked="checked" :value="text" :name="name" v-model="radioButtonValue" class="hidden"/>
+    <input :id="id" type="radio" :checked="checked" :value="text" :name="name" v-model="radioButtonValue"
+           class="hidden"/>
 
     <label :for="id" class="flex items-center cursor-pointer">
       <span class="inline-block w-4 h-4 mr-1 border rounded-full border-grey"></span>
-      {{ text }} - {{checked}}</label>
+      {{ text }}</label>
   </div>
 </template>
 
@@ -12,15 +13,6 @@
 export default {
   name: "RadioButton",
   props: ['name', 'text', 'value', 'checked'],
-  created() {
-    // console.log("başla")
-    // console.log(this.$store.state.Interval.intervalType);
-    // console.log(this.value)
-    // console.log("bit")
-    // if (this.$store.state.Interval.intervalType === this.value) {
-    //   this.isChecked = true;
-    // }
-  },
   data() {
     return {
       id: "radio-id-" + this._uid,
@@ -33,7 +25,6 @@ export default {
         return this.value
       },
       set: function () {
-        // Communicate the change to parent component so that selectedValue can be updated
         this.$emit("selected", this.value)
       }
     },
@@ -60,7 +51,9 @@ input[type="radio"]:checked + label span {
 
 input[type="radio"]:checked + label {
   color: #48bb78; //text-blue
-}input[type="radio"] + label {
-  color: #bbc1be; //text-blue
 }
+
+//input[type="radio"] + label {
+//  color: #000000; //text-blue
+//}
 </style>

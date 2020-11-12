@@ -18,7 +18,7 @@ const IntervalState = () => {
             m7: {name: "Minor 7th"},
             M7: {name: "Major 7th"},
         },
-        intervalType: "melodic",
+        intervalType: "harmonic",
         firstNote: "C4",
         secondNote: "D4",
         result: null,
