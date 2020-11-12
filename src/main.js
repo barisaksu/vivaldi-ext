@@ -4,10 +4,12 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 
+import titleMixin from './util/title'
+
 import("@/assets/css/app.css");
 
 Vue.config.productionTip = false;
-Vue.config.keyCodes.r = 82;
+Vue.mixin(titleMixin)
 
 new Vue({
     router,
