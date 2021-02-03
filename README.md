@@ -2,6 +2,10 @@
 Open-source ear training app for musicians
 
 ## Important
+
+### This repository is no longer used and no maintenance will be done. You can find the new Vivaldi at this address. https://gitlab.com/vivaldi/vivaldi.
+
+
 Some features are still incomplete and there is no community yet to test existing features.
 
 
